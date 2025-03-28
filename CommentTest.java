@@ -1,5 +1,3 @@
-
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -39,4 +37,31 @@ public class CommentTest
     public void tearDown()
     {
     }
+    
+    @Test
+    public void testIfStoredCorrectly()
+    {
+        Comment comment = new Comment("jb", "ok", 3);
+        comment.getFullDetails();
+    }
+
+    @Test
+    public void upvoteTest()
+    {
+        Comment comment1 = new Comment("jb", "wow", 3);
+        comment1.upvote();
+        comment1.upvote();
+        assertEquals(2, comment1.getVoteCount());
+    }
+
+    @Test
+    public void downvoteTest()
+    {
+        Comment comment1 = new Comment("jb", "ok", 2);
+        comment1.downvote();
+        comment1.downvote();
+        assertEquals(-2, comment1.getVoteCount());
+    }
 }
+
+

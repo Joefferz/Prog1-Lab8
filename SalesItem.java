@@ -11,6 +11,8 @@ import java.util.Iterator;
  * 
  * @author Michael Kölling and David J. Barnes
  * @version 0.1 (2016.02.29)
+ * 
+ * Q.17 "Show source" option
  */
 public class SalesItem
 {
@@ -147,7 +149,7 @@ public class SalesItem
      */
     private boolean ratingInvalid(int rating)
     {
-        return rating < 0 || rating > 5;
+        return rating < 1 || rating > 5;
     }
     
     /**
